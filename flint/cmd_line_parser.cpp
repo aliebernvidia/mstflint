@@ -248,6 +248,7 @@ FlagMetaData::FlagMetaData()
     _flags.push_back(new Flag("", "output_file", 1));
     _flags.push_back(new Flag("", "user_password", 1));
     _flags.push_back(new Flag("", "cert_chain_index", 1));
+    _flags.push_back(new Flag("", "module_password", 1));
     _flags.push_back(new Flag("", "component_type", 1));
     _flags.push_back(new Flag("", "pending", 0));
     _flags.push_back(new Flag("", "skip_if_same", 0));
@@ -919,6 +920,7 @@ void Flint::initCmdParser()
       "In case index=0 certificate chain will be stored at CERT_CHAIN_0 section, otherwise at DIGITAL_CERT_RW "
       "section according to given index.\n"
       "This flag is relevant only for set_attestation_cert_chain command.");
+    AddOptions("module_password", ' ', "<string>", "the module password to enable locked operations.");
     AddOptions(
         "component_type",
         ' ',
